@@ -3,7 +3,7 @@ export class Store {
     const { state = {} } = options
 
     // store内部的状态
-    this._subscribers = [] // 收集订阅行为
+    this._subscribers = [] // 收集订阅行为,来回调用
     // bind commit and dispatch to self
     const store = this
     const { commit } = this
