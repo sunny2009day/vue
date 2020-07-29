@@ -1,24 +1,27 @@
 <template>
   <div id="app">
-     哈哈
+    {{ this.$store.state.count }}
+    <br/>
+    {{ this.$store.getters.newCount }}
+       <br/>
+  {{this.$store.state.a.b}}
+     <br/>
+    <button @click="change">add</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  components: {
+  components: {},
+  mounted () {
+    console.log(this.$store)
+  },
+  methods: {
+    change () {
+      // this.$store.commit('change')
+      this.$store.dispatch('change')
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
